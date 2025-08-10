@@ -1,4 +1,4 @@
-# Author: Caio Sommer , Mahdi Mobarak , Oscar Masons
+# Author: Caio Sommer , Mahdi Mobarak , Oscar Mason
 # Date: 7-8-1984
 from flask import Flask, render_template, request
 
