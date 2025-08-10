@@ -1,4 +1,4 @@
-# Author: Caio Sommer (-10%), Mahdi Mobarak (-90%), Oscar Mason(200%)
+# Author: Caio Sommer , Mahdi Mobarak , Oscar Mason
 # Date: 7-8-1984
 from flask import Flask, render_template, request
 
