@@ -10,9 +10,13 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/find', methods=['POST','GET'])
+@app.route("/find")
 def find():
     return render_template('find.html')
+
+@app.route("/find", methods=['POST'])
+def find_item():
+    print(request.form)
 
 @app.route('/report', methods=['POST'])
 def add_item():
