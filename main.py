@@ -2,7 +2,7 @@
 # Date: 7-8-1984
 from flask import Flask, render_template, request
 
-items = []
+items ={}
 
 app = Flask(__name__) 
 #hello
@@ -17,13 +17,13 @@ def find():
 @app.route('/report', methods=['POST'])
 def add_item():
     print(request.form)
-    items.append({
+    items["item"] = {
         "author": request.form['name'],
         "description": request.form['description'],
         "question": request.form['question'],
         "answer": request.form['answer']
-    })
-    return "Your item has beeen<a href='/'>"
+    }
+    return "Your item has been<a href='/'>"
 
 @app.route('/report')
 def report():
