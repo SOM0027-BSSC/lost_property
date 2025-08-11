@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/find')
+@app.route('/find', methods=['POST','GET'])
 def find():
     return render_template('find.html')
 
@@ -23,7 +23,7 @@ def add_item():
         "question": request.form['question'],
         "answer": request.form['answer']
     })
-    return "Your item has beeen<a href='/'>"
+    return "Your item has been<a href='/'>"
 
 @app.route('/report')
 def report():
