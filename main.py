@@ -2,7 +2,7 @@
 # Date: 7-8-1984
 from flask import Flask, render_template, request
 
-items ={}
+items={}
 
 app = Flask(__name__) 
 #hello
@@ -24,6 +24,10 @@ def add_item():
         "answer": request.form['answer']
     }
     return "Your item has been<a href='/'>"
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html", password="lost")
 
 @app.route('/report')
 def report():
