@@ -1,5 +1,5 @@
-# Author: Caio Sommer , Mahdi Mobarak , Oscar Masons
-# Date: 7-8-1984
+# Author: Caio Sommer , Mahdi Mobarak , Oscar Mason
+# Date: 7-8-2025
 from flask import Flask, render_template, request
 
 items={}
@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/find')
+@app.route('/find', methods=['POST','GET'])
 def find():
     return render_template('find.html')
 
@@ -22,12 +22,8 @@ def add_item():
         "description": request.form['description'],
         "question": request.form['question'],
         "answer": request.form['answer']
-    }
-    return "Your item has been<a href='/'>"
-
-@app.route("/dashboard")
-def dashboard():
-    return render_template("dashboard.html", password="lost")
+    })
+    return "Your item has beeen<a href='/'>"
 
 @app.route('/report')
 def report():
