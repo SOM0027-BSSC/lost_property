@@ -22,7 +22,7 @@ def add_item():
         "question": request.form['question'],
         "answer": request.form['answer']
     }
-    return "Your item has been<a href='/'>"
+    return "Your item has been added. <br><a href='/'>Main Page</a>"
 
 @app.route('/report')
 def report():
