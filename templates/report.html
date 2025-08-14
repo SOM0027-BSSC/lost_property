@@ -8,6 +8,25 @@
 <body>
     <h1>Report</h1>
     <br>
-    Describe the item
+    Name the item:
+    <br>
+    <form action="\report" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+        <br>
+        <label for="question">Question:</label>
+        <input type="text" id="question" name="question" required>
+        <label for="wrong-answer1">Wrong Answers:</label><input type="text" id="wrong-answer1" name="wrong-answer1"><br>
+        <label for="wrong-answer2"><input type="text" id="wrong-answer2" name="wrong-answer2"></label><br>
+        <label for="wrong-answer3"><input type="text" id="wrong-answer3" name="wrong-answer3"></label>
+        <br>
+        <label for="answer">Answer:</label>
+        <input type="text" id="answer" name="answer" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
