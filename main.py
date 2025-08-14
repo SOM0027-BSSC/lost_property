@@ -1,11 +1,11 @@
 # Author: Caio Sommer , Mahdi Mobarak , Oscar Mason
-# Date: 7-8-2025
+# Date: 14-8-2025
 from flask import Flask, render_template, request
 
 items={}
 
 app = Flask(__name__) 
-#hello
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -30,11 +30,3 @@ def report():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
-# har har har har 🗿
-#🧟🐔 ( ͡° ͜ʖ ͡°)
-#wtf does this even mean?
