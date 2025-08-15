@@ -11,11 +11,14 @@
     Name the item:
     <br>
     <form action="\report" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="color" required>
+        <label for="item">Item:</label>
+        <input type="text" id="item" name="item" required>
         <br>
-        <label for="color" id="color" name="color" required></label>
-        <input type="select">
+        <label for="name">Your name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="colour" id="colour" name="colour" required>Colour:</label>
+        <select name="select" id="colour">
             <option value="red">Red</option>
             <option value="orange">Orange</option>
             <option value="yellow">Yellow</option>
@@ -26,6 +29,7 @@
             <option value="black">Black</option>
             <option value="gray">Gray</option>
             <option value="white">White</option>
+        </select>
         <input type="submit">
     </form>
 </body>
