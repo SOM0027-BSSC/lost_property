@@ -4,28 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .item:hover {
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <h1>Find</h1>
     <br>
-    
+    <div id="items"></div>
     <script>
         // catch all items
         var items = "{{ items }}".replaceAll("&#39;","'");
         console.log(items)
         eval("items = "+items)
-        console.log(items['fdsahjk']['colour'])
+        console.log(items['caio']['colour'])
         for (let i = 0; i < Object.keys(items).length; i++) {
-            document.write('<p class="item" id="'+Object.keys(items)[i]+'">'+Object.keys(items)[i]+'</p>');
-            document.getElementById(Object.keys(items)[i]).addEventListener('click', function() {
-                document.getElementById('name').value = items[this.id]['name']
-                document.getElementById('colour').value = items[this.id]['colour']
-            })
+            document.getElementById("items").innerHTML+= '<p class="item" id="'+Object.keys(items)[i]["name"]+'">'+Object.keys(items)[i]+'<br></p>';
         }
     </script>
 </body>
