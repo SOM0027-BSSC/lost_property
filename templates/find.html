@@ -9,37 +9,37 @@
     <h1>Find</h1>
     <br>
     <div id="items"></div>
-    Return to <a href="/">main page</a>
     <script>
-        // catch all items
-        var items = "{{ items }}".replaceAll("&#39;","'");
-        console.log(items)
-        eval("items = "+items)
-        for (let i = 0; i < items.length; i++) {
-            document.getElementById("items").innerHTML+=`
-                <p class="item" id="${items[i]["name"]}">
-                    ${items[i]}
-                    <br>
-                    <form action="\\find" method="POST">
-                        <input type="hidden" name="item" value="${items[i]}">
-                        <label for="color">Color:</label>
-                        <select name="colour" id="colour">
-                            <option value="red">Red</option>
-                            <option value="orange">Orange</option>
-                            <option value="yellow">Yellow</option>
-                            <option value="green">Green</option>
-                            <option value="blue">Blue</option>
-                            <option value="purple">Purple</option>
-                            <option value="pink">Pink</option>
-                            <option value="black">Black</option>
-                            <option value="gray">Gray</option>
-                            <option value="white">White</option>
-                        </select>
-                        <input type="submit">
-                    </form>
-                </p><br>
-            `
-        }
-    </script>
-</body>
-</html>
+    var username = prompt("Enter your name:")  // this will be the finder
+
+    var items = "{{ items }}".replaceAll("&#39;", "'").replaceAll("&#34;",'"');
+    console.log(items)
+    eval("items = "+items);
+
+    for (let i = 0; i < items.length; i++) {
+        document.getElementById("items").innerHTML+=`
+            <p class="item" id="${items[i]}">
+                ${items[i]}
+                <br>
+                <form action="/find" method="POST">
+                    <input type="hidden" name="item" value="${items[i]}">  <!-- actual item name -->
+                    <input type="hidden" name="finder" value="${username}"> <!-- finder name -->
+                    <label for="colour">Color:</label>
+                    <select name="colour" id="colour">
+                        <option value="red">Red</option>
+                        <option value="orange">Orange</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                        <option value="purple">Purple</option>
+                        <option value="pink">Pink</option>
+                        <option value="black">Black</option>
+                        <option value="gray">Gray</option>
+                        <option value="white">White</option>
+                    </select>
+                    <input type="submit">
+                </form>
+            </p><br>
+        `;
+    }
+</script>
