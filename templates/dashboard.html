@@ -78,6 +78,10 @@
         .slider.round:before {
         border-radius: 50%;
         }
+
+        .item {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -104,9 +108,12 @@
 
         console.log(items);
         console.log(finders);
+
+        console.log(items);
+        console.log(finders);
         for (let i = 0; i < items.length; i++) {
             document.getElementById("items").innerHTML+=`
-                <p class="item reported">
+                <p class="item reported">${items[i]["name"]} submitted: ${items[i]["colour"]} ${items[i]}</p>
             `
         }
 

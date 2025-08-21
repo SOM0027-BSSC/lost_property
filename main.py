@@ -13,7 +13,7 @@ def index():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html', password="lost", items=items, finders=finders)
+    return render_template('dashboard.html', password="lost", itemslist=list(items.keys()), finderslist=list(finders.keys()), items=items, finders=finders)
 
 @app.route("/find")
 def find():
@@ -23,7 +23,7 @@ def find():
 @app.route("/find", methods=['POST'])
 def find_item():
     finders[request.form["item"]] = {
-        "name": request.form["name"],
+        "name": items[request.form["item"]]["name"],
         "colour": request.form["colour"]
     }
     return "You request has been submitted. You will be emailed shortly if the details match up. <br><a href='/'>Return to main page</a>"
