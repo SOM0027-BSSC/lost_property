@@ -3,6 +3,7 @@
 from flask import Flask, render_template, request
 
 items = {}
+finders = {}
 
 app = Flask(__name__) 
 
@@ -12,16 +13,20 @@ def index():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html', password="lost")
+    return render_template('dashboard.html', password="lost", items=items, finders=finders)
 
 @app.route("/find")
 def find():
     print(items)
-    return render_template('find.html', items=items)
+    return render_template('find.html', items=list(items.keys()))
 
 @app.route("/find", methods=['POST'])
 def find_item():
-    print(request.form)
+    finders[request.form["item"]] = {
+        "name": request.form["name"],
+        "colour": request.form["colour"]
+    }
+    return "You request has been submitted. You will be emailed shortly if the details match up. <br><a href='/'>Return to main page</a>"
 
 @app.route('/report')
 def report():
@@ -32,7 +37,7 @@ def add_item():
     global items
     items[request.form["item"]] = {
         "name": request.form["name"],
-        "colour": request.form["select"]
+        "colour": request.form["colour"]
     }
     return "Your item has been added. <br><a href='/'>Return to main page</a>"
 
