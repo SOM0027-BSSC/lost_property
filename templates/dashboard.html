@@ -33,7 +33,7 @@
         function sendDelete(item) {
             fetch("/delete", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },  // ← Add this
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ "item": item })
             })
             .then(res => res.json())
@@ -41,8 +41,6 @@
             .catch(err => console.error(err));
         }
         const container = document.getElementById("items");
-
-// Function to create a clickable item
         function createItem(text, key, className) {
             let p = document.createElement('p');
             p.className = `item ${className}`;
@@ -56,14 +54,10 @@
             });
             container.appendChild(p);
         }
-
-        // Display reported items
         Object.keys(items).forEach(key => {
             let text = `${items[key]["name"]} submitted: ${items[key]["colour"]} ${key}`;
             createItem(text, key, 'reported');
         });
-
-        // Display finders
         Object.keys(finders).forEach(key => {
             if (finders[key]["colour"] !== items[key]["colour"]) {
                 let text = `${finders[key]["finder_name"]} found: ${finders[key]["colour"]} ${key}`;

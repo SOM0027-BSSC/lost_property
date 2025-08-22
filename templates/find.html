@@ -10,10 +10,9 @@
     <br>
     <div id="items"></div>
     <script>
-    var username = prompt("Enter your name:")  // this will be the finder
+    var username = prompt("Enter your name:");
 
     var items = "{{ items }}".replaceAll("&#39;", "'").replaceAll("&#34;",'"');
-    console.log(items)
     eval("items = "+items);
 
     for (let i = 0; i < items.length; i++) {
