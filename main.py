@@ -1,14 +1,14 @@
-# Author: Caio Sommer , Mahdi Mobarak , Oscar Mason
+# Author: Caio Sommer, Mahdi Mobarak, Oscar Mason
 # Date: 21-8-2025
 from flask import Flask, render_template, request, jsonify
 
 items = {}
 finders = {}
-chosen_password = input("Enter the password for the dashboard: ")
-print("Password is: "+chosen_password)
-print("Go to 127.0.0.1/dashboard to view and manage requests.")
 
 app = Flask(__name__) 
+
+#change password manually
+chosen_password = "password"
 
 @app.route('/')
 def index():
@@ -58,6 +58,7 @@ def add_item():
         "colour": request.form["colour"]
     }
     return "Your item has been added. <br><a href='/'>Return to main page</a>"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
